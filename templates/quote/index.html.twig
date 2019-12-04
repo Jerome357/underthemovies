@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Quote index{% endblock %}
+
+{% block body %}
+    <h1>Citations</h1>
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <h2>Quotes</h2>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        {% for quote in quotes %}
+                            <div class="col-md-6">
+                                <div class="card mb-4 shadow-sm">
+                                        <h3 class="card-text">{{ quote.createdAt |date ('d-m-Y') }}</h3>
+                                        <h3 class="card-text">{{ quote.content }}</h3>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="btn-group">
+                                                <a href="{{ path('quote_show') }}" class="btn btn-primary">Voir</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

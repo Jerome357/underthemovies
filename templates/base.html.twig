@@ -1,12 +1,70 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
-</html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Underthemovies
+			{% endblock %}
+		</title>
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('app') }}
+		{% endblock %}
+	</head>
+	<body>
+		{% block header %}
+			<header>
+				<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+					<a class="navbar-brand" href="#">Underthemovies</a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav mr-auto">
+							<li class="nav-item active">
+								<a class="nav-link" href="#">Nouvelles citations
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Index des films</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Meilleures citations</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">The Game</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Proposer une citation</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Connexion</a>
+							</li>
+						</ul>
+						<form class="form-inline my-2 my-lg-0">
+							<input class="form-control mr-sm-2" type="search" placeholder="..." aria-label="Search">
+							<button class="btn btn-outline-primary" type="submit">Rechercher</button>
+						</form>
+					</div>
+				</nav>
+
+
+			</header>
+		{% endblock %}
+
+
+		<main role="main">
+			<div class="py-5 bg-light">
+				<div class="container"> {% block body %}{% endblock %}
+					</div>
+				</div>
+			</main>
+
+
+			{% block javascripts %}
+				{{ encore_entry_script_tags('app') }}
+			{% endblock %}
+		</body>
+
+	</html>
+</body></html>
