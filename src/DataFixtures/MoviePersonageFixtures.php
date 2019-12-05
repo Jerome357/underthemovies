@@ -18,7 +18,7 @@ class MoviePersonageFixtures extends Fixture implements DependentFixtureInterfac
         $moviepersonnage1->setMovie($this->getReference("movie-pulpfiction"));
         $manager->persist($moviepersonnage1);
         $this->setReference("moviepersonage-juleswinnfield", $moviepersonnage1);
-        
+
         $moviepersonnage2 = new MoviePersonage();
         $moviepersonnage2->setPersonage($this->getReference("personage-thewolf"));
         $moviepersonnage2->setPerson($this->getReference("actor-harvey keitel"));
@@ -33,11 +33,25 @@ class MoviePersonageFixtures extends Fixture implements DependentFixtureInterfac
         $manager->persist($moviepersonnage3);
         $this->setReference("moviepersonage-cobb", $moviepersonnage3);
 
+        $moviepersonage4 = new MoviePersonage();
+        $moviepersonage4->setPersonage($this->getReference("personage-vincent"));
+        $moviepersonage4->setPerson($this->getReference("actor-tom cruise"));
+        $moviepersonage4->setMovie($this->getReference("movie-collateral"));
+        $manager->persist($moviepersonage4);
+        $this->setReference("moviepersonage-vincent", $moviepersonage4);
+
+        $moviepersonage5 = new MoviePersonage();
+        $moviepersonage5->setPersonage($this->getReference("personage-max"));
+        $moviepersonage5->setPerson($this->getReference("actor-jamie foxx"));
+        $moviepersonage5->setMovie($this->getReference("movie-collateral"));
+        $manager->persist($moviepersonage5);
+        $this->setReference("moviepersonage-max", $moviepersonage5);
+
 
         $manager->flush();
     }
 
-/**
+    /**
      * @return
      */
     public function getDependencies()

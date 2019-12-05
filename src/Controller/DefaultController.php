@@ -22,6 +22,7 @@ class DefaultController extends AbstractController
         ]);
     }
 
+
     public function Quote()
     {
         $quotes = $this->getDoctrine()->getRepository(Quote::class)->findAll();

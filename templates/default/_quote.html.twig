@@ -12,13 +12,11 @@
 				<p>{{ quote.content }}</p>
 				<p>
 					{% for moviePersonage in quote.moviePersonages %}
-                        {{ moviePersonage.personage.name  }} -
-                        <p> {{ moviePersonage.movie.title  }} </p>
+                        {{ moviePersonage.personage.name }} - {{ moviePersonage.movie.title }}
                     {% endfor %}
-				</p>
 				</p>
 			</footer>
 		</blockquote>
 	</div>
-</div>
+</div></br>
 {% endfor %}

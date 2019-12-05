@@ -46,7 +46,17 @@ class PersonFixtures extends Fixture
         $manager->persist($Actor3);
         $this->setReference("actor-leonardo di caprio", $Actor3);
 
+        $Actor4 = new Person();
+        $Actor4->setFirstname("Tom");
+        $Actor4->setLastname("Cruise");
+        $manager->persist($Actor4);
+        $this->setReference("actor-tom cruise", $Actor4);
 
+        $Actor5 = new Person();
+        $Actor5->setFirstname("Jamie");
+        $Actor5->setLastname("Foxx");
+        $manager->persist($Actor5);
+        $this->setReference("actor-jamie foxx", $Actor5);
 
 
 

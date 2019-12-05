@@ -8,14 +8,12 @@
 	<div class="album py-5 bg-light">
 		<div class="container">
 			<div class="row justify-content">
-				{% for quote in quotes %}
 					<div class="col-md-12">
 						<div class="card mb-4 shadow-sm">
 							{{ render(controller('App\\Controller\\DefaultController::quote')) }}
 						</div>
 					</div>
 				</div>
-			{% endfor %}
 		</div>
 	</div>
 {% endblock %}

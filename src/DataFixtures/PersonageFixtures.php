@@ -25,6 +25,15 @@ class PersonageFixtures extends Fixture
         $manager->persist($personage3);
         $this->setReference("personage-cobb", $personage3);
 
+        $personage4 = new Personage();
+        $personage4->setName("Vincent");
+        $manager->persist($personage4);
+        $this->setReference("personage-vincent", $personage4);
+
+        $personage5 = new Personage();
+        $personage5->setName("Max");
+        $manager->persist($personage5);
+        $this->setReference("personage-max", $personage5);
 
         $manager->flush();
     }
