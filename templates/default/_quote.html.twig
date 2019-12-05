@@ -1,24 +1,24 @@
-{% for quotes in quote %}
-{% for personages in personage %}
-{% for users in user %}
-{% for movies in movie %}
+{% for quote in quotes %}
+
 
 	<div class="card">
 		<div class="card-header">
-			<p>{{ quotes.createdAt |date ('d-m-Y') }}</p>
+			<p>{{ quote.createdAt |date ('d-m-Y') }}</p>
+			<p>{{ quote.user.username }}</p>
+			<p></p>
 		</div>
 		<div class="card-body">
 			<blockquote class="blockquote mb-0">
-				<p>{{ quotes.content }}</p>
-                <p>{{ personages.name}}</p>
-				<footer class="blockquote-footer">{{ users.username }}
-					in <cite title="Source Title">{{ movies.title}}</cite>
-				</footer>
-			</blockquote>
-		</div>
+				<p>{{ quote.content }}</p>
+				<p>
+					{% for moviePersonage in quote.moviePersonages %}
+                        {{ moviePersonage.personage.name  }} -
+                        <p> {{ moviePersonage.movie.title  }} </p>
+                    {% endfor %}
+				</p>
+				</p>
+			</footer>
+		</blockquote>
 	</div>
-
-{% endfor %}
-{% endfor %}
-{% endfor %}
+</div>
 {% endfor %}

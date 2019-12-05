@@ -24,17 +24,11 @@ class DefaultController extends AbstractController
 
     public function Quote()
     {
-        $quote = $this->getDoctrine()->getRepository(Quote::class)->findAll();
-        $personage = $this->getDoctrine()->getRepository(Personage::class)->findAll();
-        $user = $this->getDoctrine()->getRepository(User::class)->findAll();
-        $movie = $this->getDoctrine()->getRepository(Movie::class)->findAll();
+        $quotes = $this->getDoctrine()->getRepository(Quote::class)->findAll();
 
 
         return $this->render("default/_quote.html.twig",[
-            "quote" => $quote,
-            "personage" => $personage,
-            "user" => $user,
-            "movie" => $movie
+            "quotes" => $quotes
         ]);
     }
 }
