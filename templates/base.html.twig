@@ -14,7 +14,7 @@
 		{% block header %}
 			<header>
 				<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-					<a class="navbar-brand" href="#">Underthemovies</a>
+					<a class="navbar-brand" href="{{ path('homepage') }}">Underthemovies</a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</button>
@@ -22,23 +22,22 @@
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav mr-auto">
 							<li class="nav-item active">
-								<a class="nav-link" href="#">Nouvelles citations
-								</a>
+								<a class="nav-link mr-sm-3 ml-sm-3" href="#">Nouvelles citations</a>
 							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">Index des films</a>
+							<li class="nav-item active">
+								<a class="nav-link mr-sm-3" href="#">Index des films</a>
 							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">Meilleures citations</a>
+							<li class="nav-item active">
+								<a class="nav-link mr-sm-3" href="#">Meilleures citations</a>
 							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">The Game</a>
+							<li class="nav-item active">
+								<a class="nav-link mr-sm-3" href="#">The Game</a>
 							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">Proposer une citation</a>
+							<li class="nav-item active">
+								<a class="nav-link mr-sm-3" href="#">Proposer une citation</a>
 							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">Connexion</a>
+							<li class="nav-item active">
+								<a class="nav-link mr-sm-2" href="#">Connexion</a>
 							</li>
 						</ul>
 						<form class="form-inline my-2 my-lg-0">
@@ -65,6 +64,4 @@
 				{{ encore_entry_script_tags('app') }}
 			{% endblock %}
 		</body>
-
 	</html>
-</body></html>

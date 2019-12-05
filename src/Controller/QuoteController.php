@@ -12,28 +12,17 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/quote")
+ * @Route("/quotes")
  */
 class QuoteController extends AbstractController
 {
     /**
-     * @Route("/", name="quote_index", methods={"GET"})
+     * @Route("/quotes", name="quotes", methods={"GET"})
      */
-    public function index(QuoteRepository $QuoteRepository): Response
+    public function quotes(QuoteRepository $QuoteRepository): Response
     {
         return $this->render('quote/index.html.twig', [
             'quotes' => $QuoteRepository->findAll(),
-        ]);
-    }
-
-
-    /**
-     * @Route("/", name="quote_show", methods={"GET"})
-     */
-    public function show(Quote $quote): Response
-    {
-        return $this->render('quote/show.html.twig', [
-            'quote' => $quote,
         ]);
     }
 }
