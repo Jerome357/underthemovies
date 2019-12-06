@@ -1,6 +1,13 @@
 @import "~bootstrap";
 
-
-.main{
+.main {
     background-color: rgb(39, 59, 213);
+}
+
+.card-header {
+    background-color: #38447c;
+}
+
+#navbarSupportedContent a:hover {
+    color: #5974F1;
 }

@@ -1,20 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Quote index
-{% endblock %}
+{% block title %}{% endblock %}
 
 {% block body %}
-	<h1>Citations</h1>
-	<div class="album py-5 bg-light">
-		<div class="container">
-			<div class="row justify-content">
-					<div class="col-md-12">
-						<div class="card mb-4 shadow-sm">
-							{{ render(controller('App\\Controller\\DefaultController::quote')) }}
-						</div>
-					</div>
+	<div class="container py-5">
+		<div class="row justify-content">
+			<div class="col-md-10">
+				<div>
+					{{ render(controller('App\\Controller\\DefaultController::quote')) }}
 				</div>
+			</div>
 		</div>
 	</div>
 {% endblock %}
-{# /* <h3 class="card-text">{{ quote.createdAt |date ('d-m-Y') }}</h3><h3 class="card-text">{{ quote.content }}</h3>*/ #}

@@ -32,7 +32,8 @@ class QuoteFixtures extends Fixture implements DependentFixtureInterface
         $quote3 = new Quote();
         $quote3->setContent("Max, un gars dans le métro, ici, à Los Angeles il meurt, tu crois qu’on le remarquera ?");
         $quote3->setCreatedAt(new \DateTime("2015-5-9"));
-        $quote3->addMoviePersonage($this->getReference("moviepersonage-vincent", "moviepersonage-max"));
+        $quote3->addMoviePersonage($this->getReference("moviepersonage-vincent"));
+        $quote3->addMoviePersonage($this->getReference("moviepersonage-max"));
         $quote3->setUser($this->getReference("user-admin"));
         $manager->persist($quote3);
         $this->setReference("quote3", $quote3);
