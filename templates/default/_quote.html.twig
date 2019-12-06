@@ -17,7 +17,7 @@
 				<p>
 					{% for moviePersonage in quote.moviePersonages %}
 						{{ moviePersonage.personage.name }},
-						{{ moviePersonage.movie.title }}
+						<a href="{{ path('movie', {'movie': moviePersonage.movie.title}) }}">
 					{% endfor %}
 				</p>
 			</div>
