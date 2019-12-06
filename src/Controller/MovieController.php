@@ -17,12 +17,12 @@ use Symfony\Component\Routing\Annotation\Route;
 class MovieController extends AbstractController
 {
     /**
-     * @Route("/movie", name="movie", methods={"GET"})
+     * @Route("/movie/{id}", name="movie", methods={"GET"})
      */
-    public function movie(MovieRepository $MovieRepository): Response
+    public function movie(Movie $movie): Response
     {
         return $this->render('movie/movie.html.twig', [
-            'movie' => $MovieRepository->findAll(),
+            'movie' => $movie
         ]);
     }
 }
