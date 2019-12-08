@@ -31,7 +31,7 @@ class DefaultController extends AbstractController
         ]);
     }
 
-  /*   public function Films()
+/*   public function Films()
     {
         $movie = $this->getDoctrine()->getRepository(Movie::class)->findAll();
 
