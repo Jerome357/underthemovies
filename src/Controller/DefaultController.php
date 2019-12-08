@@ -15,21 +15,28 @@ class DefaultController extends AbstractController
     /**
      * @Route("/", name="homepage")
      */
-    public function index()
+    public function homepage()
     {
         return $this->render('default/homepage.html.twig', [
             'controller_name' => 'DefaultController',
         ]);
     }
 
-
     public function Quote()
     {
         $quotes = $this->getDoctrine()->getRepository(Quote::class)->findAll();
 
-
-        return $this->render("default/_quote.html.twig",[
+        return $this->render("default/_quote.html.twig", [
             "quotes" => $quotes
         ]);
     }
+
+  /*   public function Films()
+    {
+        $movie = $this->getDoctrine()->getRepository(Movie::class)->findAll();
+
+        return $this->render("movie/index.html.twig", [
+            "movie" => $movie
+        ]);
+    }*/
 }

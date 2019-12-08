@@ -22,7 +22,7 @@ class MovieFixtures extends Fixture implements DependentFixtureInterface
 
         $movie2 = new Movie();
         $movie2->setTitle("Collatéral");
-        $movie2->setPicture("collateral.png");
+        $movie2->setPicture("collateral.jpg");
         $movie2->setReleaseDate(new \DateTime("2004"));
         $movie2->setDirector($this->getReference("director-mann"));
         $movie2->getCategories($this->getReference("drame"));

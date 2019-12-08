@@ -2,8 +2,8 @@
 
 namespace App\Controller;
 
-use App\Entity\Movie;
-use App\Repository\MovieRepository;
+use App\Entity\Quote;
+use App\Repository\QuoteRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
@@ -12,17 +12,17 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/movie")
+ * @Route("/quotes")
  */
-class MovieController extends AbstractController
+class QuotesController extends AbstractController
 {
     /**
-     * @Route("/movie/{id}", name="movie", methods={"GET"})
+     * @Route("/quotes", name="quotes", methods={"GET"})
      */
-    public function movie(Movie $movie): Response
+    public function quotes(QuoteRepository $QuoteRepository): Response
     {
-        return $this->render('movie/movie.html.twig', [
-            'movie' => $movie
+        return $this->render('quote/index.html.twig', [
+            'quotes' => $QuoteRepository->findAll(),
         ]);
     }
 }

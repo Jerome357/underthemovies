@@ -7,7 +7,9 @@
 	</div>
 	<div class="card">
 		<div class="card-header text-right">
-			<p></p>
+			<p>
+				
+			</p>
 		</div>
 		<div class="card-body">
 			<blockquote class="blockquote mb-0">
@@ -21,11 +23,11 @@
 						{% set path = path('movie', {'id': moviePersonage.movie.id}) %}-
 						{% set title = moviePersonage.movie.title %}
 					{% endfor %}
-					
-						<a href= {{ path }}>  {{ title }} </a>
-					
-						
-					
+
+					<a href={{ path }}>
+						{{ title }}
+
+					</a>
 				</p>
 			</p>
 		</div>
@@ -33,4 +35,7 @@
 	<div class="text-center">
 		<a href="#" class="card-link">Citations du film</a>
 	</div>
-</div></div></br>{% endfor %}{# <a href="{{ path('movie', {'movie': moviePersonage.personage.name}) }}">, #}
+</div>
+</div>
+</br>
+{% endfor %}
