@@ -1,16 +1,28 @@
 {% extends 'base.html.twig' %}
-{% for movie in movie %}
+{% for movies in movie %}
 
 	{% block body %}
 		<div class="container">
-			<div class="row col md-12">
+			<div class="d-flex row col md-12">
 				<h2>Page du film</h2>
-				<div class="container">
-					<div class="d-flex row justify-content">
+				<div class="container my-5">
+					<div class="d-flex justify-content-around">
 						<div class="col-md-3">
-							{{ movie.picture }}
+							<img src="{{ asset("uploads/" ~ movie.picture) }}" alt="{{ movie.title }}" class="fit-image">
 						</div>
-						<div class="col-md-9"></div>
+						<div class="col-md-9">
+							<p>{{ movie.title }}</br>
+								{{ movie.releaseDate |date ('d-m-Y') }}</br>
+								{{ movie.director.firstname }}
+								{{ movie.director.lastname }}</br>
+								Acteurs : </br>
+								{% for moviePersonage in movie.moviePersonages %}
+								{% for person in moviePersonage.person %}
+								{{ actor.firstname }}
+								{% endfor %}
+								{% endfor %}
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>

@@ -13,7 +13,7 @@ class MovieFixtures extends Fixture implements DependentFixtureInterface
     {
         $movie1 = new Movie();
         $movie1->setTitle("Pulp Fiction");
-        $movie1->setPicture("pulpfiction.png");
+        $movie1->setPicture("pulpfiction.jpg");
         $movie1->setReleaseDate(new \DateTime("1994"));
         $movie1->setDirector($this->getReference("director-tarantino"));
         $movie1->getCategories($this->getReference("thriller"));
