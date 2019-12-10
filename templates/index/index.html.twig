@@ -1,1 +1,14 @@
 {% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+    {% for letter in letters %}
+        <a href="{{ path('indexfilms', { 'letter': letter }) }}">{{ letter }}</a>
+    {% endfor %}
+
+    {% for film in films %}
+        
+    {% endfor %}
+
+{% endblock %}

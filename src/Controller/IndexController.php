@@ -17,15 +17,17 @@ use Symfony\Component\Routing\Annotation\Route;
 class IndexController extends AbstractController
 {
     /**
-     * @Route("/index", name="indexfilms", methods={"GET"})
+     * @Route("/index/{letter}", defaults={"letter": "a"}, name="indexfilms", methods={"GET"})
      */
-
-    public function index()
+    public function index(string $letter)
     {
-        $indexfilms = $this->getDoctrine()->getRepository(Movie::class)->findAll();
+        $films = $this->getDoctrine()->getRepository(Movie::class)->findAll();
+        // $films = $this->getDoctrine()->getRepository(Movie::class)->findAllByLetter($letter);
+        $letters = range('a', 'z');
 
         return $this->render("index/index.html.twig", [
-            "indexfilms" => $indexfilms
+            "films" => $films,
+            "letters" => $letters
         ]);
     }
 }

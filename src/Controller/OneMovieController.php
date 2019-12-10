@@ -22,7 +22,7 @@ class OneMovieController extends AbstractController
     public function onemovie(Movie $movie): Response
     {
         return $this->render('movie/onemovie.html.twig', [
-            'movie' => $movie
+            'movie' => $movie,
         ]);
     }
 }
