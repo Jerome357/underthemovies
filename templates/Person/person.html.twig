@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        {% for moviePersonage in person.moviePersonages %}
+            <div class="col-md-3">
+                <div class="card">
+                    <img class="img-thumbnail img-card"
+                         src="{{ asset("uploads/" ~ moviePersonage.person.picture) }}"
+                         alt="{{ moviePersonage.person.lastname }}">
+                    <div class="card-body">
+                        <p class="card-text">
+                            {{ moviePersonage.person.firstname }}
+                            {{ moviePersonage.person.lastname }}
+                        <p class="card-text">
+                            <small class="text-muted">Voir ses citations</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

@@ -18,23 +18,27 @@
                 </br>
                 <div class="text-right">
                     <p>
-                        {% set path, title = "", "" %}
+                        {% set title, namePerso = "", "" %}
                         {% for moviePersonage in quote.moviePersonages %}
                             {{ moviePersonage.personage.name }}
-                            {% set path = path('movie', {'id': moviePersonage.movie.id}) %}-
+                            {% set namePerso = path('movie', {'id': moviePersonage.movie.id}) %}-
                             {% set title = moviePersonage.movie.title %}
                         {% endfor %}
 
-                        <a href={{ path }}>
+                        <a href={{ namePerso }}>
                             {{ title }}
-
                         </a>
+
+
+{#                        <a href="{{ path('indexfilms', { 'letter': letter }) }}">{{ letter }}</a>#}
+
                     </p>
                     </p>
                 </div>
             </blockquote>
             <div class="text-center">
-                <a href="#" class="card-link">Citations du film</a>
+
+
             </div>
         </div>
     </div>

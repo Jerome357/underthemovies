@@ -1,18 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block body%}
+{% block body %}
 
-	<div class="jumbotron text-center col-md-10">
-		<h1 class="jumbotron-heading">Underthemovies</h1>
-		<p class="lead text-muted">Les nouvelles citations</p>
-		<p>
-			<a href="{{path('quotes')}}" class="btn btn-secondary my-2">Toutes les quotes</a>
-		</p>
-	</div>
+    <div class="jumbotron text-center col-md-10">
+        <h1 class="jumbotron-heading">Underthemovies</h1>
+        <p class="lead text-muted">Les nouvelles citations</p>
+        <p>
+            <a href="{{ path('quotes') }}" class="btn btn-secondary my-2">Toutes les quotes</a>
+        </p>
+    </div>
 
-	<div>
-		<h2>Citation aléatoire</h2>
-		{{ render(controller('App\\Controller\\DefaultController::quote')) }}
-	</div>
-</div>
+    <div>
+        <h2>Citation aléatoire</h2>
+        {{ render(controller('App\\Controller\\DefaultController::quote')) }}
+    </div>
+    </div>
+
 {% endblock %}
