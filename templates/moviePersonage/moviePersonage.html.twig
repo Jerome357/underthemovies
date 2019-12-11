@@ -1,24 +1,24 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-			<div class="container my-5">
-				<div class="d-flex justify-content-around">
-					<div class="col-md-3">
-						<img src="{{ asset("uploads/" ~ movie.picture) }} "width=100%" alt="{{ movie.title }}" class="fit-image">
-					</div>
-					<div class="col-md-9">
-						<p>{{ movie.title }}</br>
-							{{ movie.releaseDate |date ('d-m-Y') }}</br>
-							{{ movie.director.firstname }}
-							{{ movie.director.lastname }}</br>
-							Acteurs : </br>
-							{% endfor %}
-							Catégorie: 
-							{% for category in movie.categories %}
-								{{ category.name }}
-							{% endfor %}
-						</p>
-					</div>
-				</div>
-			</div>
+
+<div class="d-flex justify-content-around">
+    <div class="col-md-3">
+        <img src="{{ asset("uploads/" ~ movie.picture) }} " width=100%" alt="{{ movie.title }}" class="fit-image">
+    </div>
+    <div class="col-md-9">
+        <p>{{ movie.title }}</br>
+            {{ movie.releaseDate |date ('d-m-Y') }}</br>
+            {{ movie.director.firstname }}
+            {{ movie.director.lastname }}</br>
+            Acteurs : </br>
+            {% endfor %}
+            Catégorie:
+            {% for category in movie.categories %}
+                {{ category.name }}
+            {% endfor %}
+        </p>
+    </div>
+</div>
+
 {% endblock %}

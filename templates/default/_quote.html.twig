@@ -1,42 +1,42 @@
 {% for quote in quotes %}
 
-	<div class="text-right">
-		{{ quote.user.username }}
-		/
-		{{ quote.createdAt |date ('d-m-Y') }}
-	</div>
-	<div class="card">
-		<div class="card-header text-right">
-			<p>
-			
-			
-			</p>
-		</div>
-		<div class="card-body">
-			<blockquote class="blockquote mb-0">
-				<p>{{ quote.content }}</p>
-			</br>
-			<div class="text-right">
-				<p>
-					{% set path, title = "", "" %}
-					{% for moviePersonage in quote.moviePersonages %}
-						{{ moviePersonage.personage.name }}
-						{% set path = path('movie', {'id': moviePersonage.movie.id}) %}-
-						{% set title = moviePersonage.movie.title %}
-					{% endfor %}
+    <div class="text-right">
+        {{ quote.user.username }}
+        /
+        {{ quote.createdAt |date ('d-m-Y') }}
+    </div>
+    <div class="card">
+        <div class="card-header text-right">
+            <p>
 
-					<a href={{ path }}>
-						{{ title }}
 
-					</a>
-				</p>
-			</p>
-		</div>
-	</blockquote>
-	<div class="text-center">
-		<a href="#" class="card-link">Citations du film</a>
-	</div>
-</div>
-</div>
-</br>
+            </p>
+        </div>
+        <div class="card-body">
+            <blockquote class="blockquote mb-0">
+                <p>{{ quote.content }}</p>
+                </br>
+                <div class="text-right">
+                    <p>
+                        {% set path, title = "", "" %}
+                        {% for moviePersonage in quote.moviePersonages %}
+                            {{ moviePersonage.personage.name }}
+                            {% set path = path('movie', {'id': moviePersonage.movie.id}) %}-
+                            {% set title = moviePersonage.movie.title %}
+                        {% endfor %}
+
+                        <a href={{ path }}>
+                            {{ title }}
+
+                        </a>
+                    </p>
+                    </p>
+                </div>
+            </blockquote>
+            <div class="text-center">
+                <a href="#" class="card-link">Citations du film</a>
+            </div>
+        </div>
+    </div>
+    </br>
 {% endfor %}

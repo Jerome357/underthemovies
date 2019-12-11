@@ -21,28 +21,31 @@
                 </div>
             </div>
         </div>
-        {% for moviePersonage in movie.moviePersonages %}
-            <div class="d-flex row">
-                <div>
-                    <img src="{{ asset("uploads/" ~ moviePersonage.person.picture) }}" width=100%"
-                         alt="{{ moviePersonage.person.lastname }}" class="fit-image">
-                </div>
-                <div class="card col-md-4 my-5">
-                    <img src="img src="{{ asset("uploads/" ~ moviePersonage.person.picture) }} "width=100%"
-                    alt="{{ moviePersonage.person.lastname }}" class="fit-image">
-                    <div class="card-body">
-                        <h5 class="card-title">Acteur :</h5>
+    </div>
 
-                        <p class="card-text">
-                            {{ moviePersonage.person.lastname }}
-                            {{ moviePersonage.person.firstname }}
-                        <p class="card-text">
-                            <small class="text-muted">Voir ses citations</small>
-                        </p>
+
+    <div class="container">
+        <div class="row">
+            {% for moviePersonage in movie.moviePersonages %}
+                <div class="col-md-3">
+                    <div class="card">
+                        <img class="img-thumbnail img-card" src="{{ asset("uploads/" ~ moviePersonage.person.picture) }}"
+                             alt="{{ moviePersonage.person.lastname }}">
+                        <div class="card-body">
+                            <p class="card-text">
+                                {{ moviePersonage.person.firstname }}
+                                {{ moviePersonage.person.lastname }}
+                            <p class="card-text">
+                                <small class="text-muted">Voir ses citations</small>
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        {% endfor %}
+            {% endfor %}
+        </div>
     </div>
+
+
+
 {% endblock %}
 
