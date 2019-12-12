@@ -5,7 +5,7 @@
     <div class="container my-5">
         <div class="d-flex justify-content-around">
             <div class="col-md-3">
-                <img src="{{ asset("uploads/" ~ movie.picture) }} " width="100%" alt="{{ movie.title }}" class="
+                <img src="{{ asset("build/uploads/" ~ movie.picture) }} " width="100%" alt="{{ movie.title }}" class="
               fit-image">
             </div>
             <div class="col-md-9">
@@ -30,7 +30,7 @@
                 <div class="col-md-3">
                     <div class="card text-center">
                         <img class="img-thumbnail img-card"
-                             src="{{ asset("uploads/" ~ moviePersonage.person.picture) }}"
+                             src="{{ asset("build/uploads/" ~ moviePersonage.person.picture) }}"
                              alt="{{ moviePersonage.person.lastname }}">
                         <div class="card-body">
                             <p class="card-text">
