@@ -1,46 +1,44 @@
-{% for quote in quotes %}
-
-    <div class="text-right">
-        {{ quote.user.username }}
-        /
-        {{ quote.createdAt |date ('d-m-Y') }}
+<div class="text-right">
+    {{ quote.user.username }}
+    /
+    {{ quote.createdAt |date ('d-m-Y') }}
+</div>
+<div class="card">
+    <div class="card-header text-right">
+        <p>
+            {% for category in quote.moviePersonages[0].movie.categories %}
+                {{ category.name }}
+            {% endfor %}
+        </p>
     </div>
-    <div class="card">
-        <div class="card-header text-right">
-            <p>
+    <div class="card-body">
+        <blockquote class="blockquote mb-0">
+            <p>{{ quote.content }}</p>
+            </br>
+            <div class="text-right">
+                <p>
+                    {% set title, namePerso = "", "" %}
+                    {% for moviePersonage in quote.moviePersonages %}
+                        {{ moviePersonage.personage.name }}
+                        {% set namePerso = path('movie', {'id': moviePersonage.movie.id}) %}-
+                        {% set title = moviePersonage.movie.title %}
+                    {% endfor %}
 
-
-            </p>
-        </div>
-        <div class="card-body">
-            <blockquote class="blockquote mb-0">
-                <p>{{ quote.content }}</p>
-                </br>
-                <div class="text-right">
-                    <p>
-                        {% set title, namePerso = "", "" %}
-                        {% for moviePersonage in quote.moviePersonages %}
-                            {{ moviePersonage.personage.name }}
-                            {% set namePerso = path('movie', {'id': moviePersonage.movie.id}) %}-
-                            {% set title = moviePersonage.movie.title %}
-                        {% endfor %}
-
-                        <a href={{ namePerso }}>
-                            {{ title }}
-                        </a>
+                    <a href={{ namePerso }}>
+                        {{ title }}
+                    </a>
 
 
 {#                        <a href="{{ path('indexfilms', { 'letter': letter }) }}">{{ letter }}</a>#}
 
-                    </p>
-                    </p>
-                </div>
-            </blockquote>
-            <div class="text-center">
-
-
+                </p>
+                </p>
             </div>
+        </blockquote>
+        <div class="text-center">
+
+
         </div>
     </div>
-    </br>
-{% endfor %}
+</div>
+</br>

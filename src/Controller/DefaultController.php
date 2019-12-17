@@ -25,18 +25,10 @@ class DefaultController extends AbstractController
     public function Quote()
     {
         $quotes = $this->getDoctrine()->getRepository(Quote::class)->findAll();
+        $index = array_rand($quotes);
 
         return $this->render("default/_quote.html.twig", [
-            "quotes" => $quotes
+            "quote" => $quotes[$index]
         ]);
     }
-
-/*   public function Films()
-    {
-        $movie = $this->getDoctrine()->getRepository(Movie::class)->findAll();
-
-        return $this->render("movie/index.html.twig", [
-            "movie" => $movie
-        ]);
-    }*/
 }

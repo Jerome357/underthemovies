@@ -1,22 +1,29 @@
 @import "~bootstrap";
 
 .main {
-    background-color: rgb(213, 39, 85);
+  background-color: rgb(213, 39, 85);
 }
 
 .card-header {
-    background-color: #38447c;
+  background-color: #38447c;
 }
 
 #navbarSupportedContent a:hover {
-    color: #5974F1;
+  color: #5974F1;
 }
 
 .nav-link {
-    color:#38447C;
+  color: #38447C;
 }
 
 .img-card {
-    object-fit: cover;
-    height: 350px;
+  object-fit: cover;
+  height: 300px;
 }
+
+.movie-card {
+  object-fit: cover;
+  height: 400px;
+}
+
+
