@@ -51,7 +51,7 @@
 {% endblock %}
 
 
-<div class="d-flex justify-content-between my-2">
+<div class="d-flex row my-2">
     <nav class="col-md-1 col-lg-1 px-1 sidebar">
         <a class="nav-link mt-1" href="#">Thriller</a>
         <a class="nav-link mt-2" href="#">Aventure</a>
@@ -63,7 +63,7 @@
         <a class="nav-link mt-2" href="#">Romantique</a>
         <a class="nav-link mt-2" href="#">Drame</a>
     </nav>
-    <div class="col md-11 row justify-content-around">
+    <div class="col md-11">
         {% block body %}{% endblock %}
     </div>
 </div>
@@ -102,6 +102,11 @@
 
 {% block javascripts %}
     {{ encore_entry_script_tags('app') }}
+    <script>
+    ('.carousel').carousel({
+    interval: 4000
+    })
+    </script>
 {% endblock %}
 </body>
 </html>

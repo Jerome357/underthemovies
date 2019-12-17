@@ -1,17 +1,17 @@
-<div class="text-right">
+<div class="text-right mt-5">
     {{ quote.user.username }}
     /
     {{ quote.createdAt |date ('d-m-Y') }}
 </div>
 <div class="card">
-    <div class="card-header text-right">
+    <div class="card-header text-right" style="height: 3em;">
         <p>
             {% for category in quote.moviePersonages[0].movie.categories %}
                 {{ category.name }}
             {% endfor %}
         </p>
     </div>
-    <div class="card-body">
+    <div class="card-body" style="width: 60rem;">
         <blockquote class="blockquote mb-0">
             <p>{{ quote.content }}</p>
             </br>
@@ -23,22 +23,13 @@
                         {% set namePerso = path('movie', {'id': moviePersonage.movie.id}) %}-
                         {% set title = moviePersonage.movie.title %}
                     {% endfor %}
-
                     <a href={{ namePerso }}>
                         {{ title }}
                     </a>
-
-
-{#                        <a href="{{ path('indexfilms', { 'letter': letter }) }}">{{ letter }}</a>#}
-
                 </p>
                 </p>
             </div>
         </blockquote>
-        <div class="text-center">
-
-
-        </div>
     </div>
 </div>
 </br>
