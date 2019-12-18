@@ -1,35 +1,43 @@
-<div class="text-right mt-5">
-    {{ quote.user.username }}
-    /
-    {{ quote.createdAt |date ('d-m-Y') }}
-</div>
-<div class="card">
-    <div class="card-header text-right" style="height: 3em;">
-        <p>
-            {% for category in quote.moviePersonages[0].movie.categories %}
-                {{ category.name }}
-            {% endfor %}
-        </p>
-    </div>
-    <div class="card-body" style="width: 60rem;">
-        <blockquote class="blockquote mb-0">
-            <p>{{ quote.content }}</p>
-            </br>
-            <div class="text-right">
+<div class="d-flex justify-content-center">
+    <div class="col-9">
+
+        <div class="text-right mt-5">
+            {{ quote.user.username }}
+            /
+            {{ quote.createdAt |date ('d-m-Y') }}
+        </div>
+
+
+        <div class="card">
+            <div class="card-header text-right" style="height: 3em;">
                 <p>
-                    {% set title, namePerso = "", "" %}
-                    {% for moviePersonage in quote.moviePersonages %}
-                        {{ moviePersonage.personage.name }}
-                        {% set namePerso = path('movie', {'id': moviePersonage.movie.id}) %}-
-                        {% set title = moviePersonage.movie.title %}
+                    {% for category in quote.moviePersonages[0].movie.categories %}
+                        {{ category.name }}
                     {% endfor %}
-                    <a href={{ namePerso }}>
-                        {{ title }}
-                    </a>
-                </p>
                 </p>
             </div>
-        </blockquote>
+            <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                    <p>{{ quote.content }}</p>
+                    </br>
+                    <div class="text-right">
+                        <p>
+                            {% set title, namePerso = "", "" %}
+                            {% for moviePersonage in quote.moviePersonages %}
+                                {{ moviePersonage.personage.name }}
+                                {% set namePerso = path('movie', {'id': moviePersonage.movie.id}) %}-
+                                {% set title = moviePersonage.movie.title %}
+                            {% endfor %}
+                            <a href={{ namePerso }}>
+                                {{ title }}
+                            </a>
+                        </p>
+                        </p>
+                    </div>
+                </blockquote>
+            </div>
+        </div>
+
     </div>
 </div>
 </br>
