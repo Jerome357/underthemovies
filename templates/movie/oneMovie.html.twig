@@ -33,14 +33,11 @@
                              src="{{ asset("build/uploads/" ~ moviePersonage.person.picture) }}"
                              alt="{{ moviePersonage.person.lastname }}">
                         <div class="card-body">
-                            <p class="card-text">
+                            <p class="card text-center">
                                 <a href="{{ path('person', {'id': moviePersonage.person.id}) }}">
                                     {{ moviePersonage.person.firstname }}
                                     {{ moviePersonage.person.lastname }}
                                 </a>
-                            </p>
-                            <p class="card-text">
-                            <div>Voir ses citations</div>
                             </p>
                         </div>
                     </div>

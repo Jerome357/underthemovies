@@ -47,6 +47,26 @@ class MoviePersonageFixtures extends Fixture implements DependentFixtureInterfac
         $manager->persist($moviepersonage5);
         $this->setReference("moviepersonage-max", $moviepersonage5);
 
+        $moviepersonage6 = new MoviePersonage();
+        $moviepersonage6->setPersonage($this->getReference("personage-django"));
+        $moviepersonage6->setPerson($this->getReference("actor-jamie foxx"));
+        $moviepersonage6->setMovie($this->getReference("movie-django"));
+        $manager->persist($moviepersonage6);
+        $this->setReference("moviepersonage-django", $moviepersonage6);
+
+        $moviepersonage7 = new MoviePersonage();
+        $moviepersonage7->setPersonage($this->getReference("personage-stephen"));
+        $moviepersonage7->setPerson($this->getReference("actor-samuel l.jackson"));
+        $moviepersonage7->setMovie($this->getReference("movie-django"));
+        $manager->persist($moviepersonage7);
+        $this->setReference("moviepersonage-stephen", $moviepersonage7);
+
+        $moviepersonage8 = new MoviePersonage();
+        $moviepersonage8->setPersonage($this->getReference("personage-calvin"));
+        $moviepersonage8->setPerson($this->getReference("actor-leonardo di caprio"));
+        $moviepersonage8->setMovie($this->getReference("movie-django"));
+        $manager->persist($moviepersonage8);
+        $this->setReference("moviepersonage-calvin", $moviepersonage8);
 
         $manager->flush();
     }

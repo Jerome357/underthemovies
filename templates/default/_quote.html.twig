@@ -10,7 +10,7 @@
 
         <div class="card">
             <div class="card-header text-right" style="height: 3em;">
-                <p>
+                <p id="categorie">
                     {% for category in quote.moviePersonages[0].movie.categories %}
                         {{ category.name }}
                     {% endfor %}
@@ -22,21 +22,25 @@
                     </br>
                     <div class="text-right">
                         <p>
-                            {% set title, namePerso = "", "" %}
+                            {% set lien, title = "", "" %}
                             {% for moviePersonage in quote.moviePersonages %}
-                                {{ moviePersonage.personage.name }}
-                                {% set namePerso = path('movie', {'id': moviePersonage.movie.id}) %}-
+                                <a href="{{ path('personage', {'id': moviePersonage.personage.id}) }}">
+                                    {{ moviePersonage.personage.name }}
+                                </a>
+
+                                {% set lien = path('movie', {'id': moviePersonage.movie.id}) %}
                                 {% set title = moviePersonage.movie.title %}
                             {% endfor %}
-                            <a href={{ namePerso }}>
-                                {{ title }}
-                            </a>
-                        </p>
+
+                            <a href={{ lien }}>
+                                 <strong>{{ title }}</strong></a>
+
                         </p>
                     </div>
                 </blockquote>
             </div>
         </div>
+
 
     </div>
 </div>

@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-3">
+                <p class="card text-center">
+                    {{ personage.name }}
+                <p>
+            </div>
+        </div>
+    </div>
+
+    {% for moviePersonage in personage.moviePersonages %}
+        <h4>{{ moviePersonage.personage.name }}</h4>
+        {% for quote in moviePersonage.quotes %}
+            {{ include('default/_quote.html.twig') }}
+        {% endfor %}
+    {% endfor %}
+
+
+
+
+
+
+{% endblock %}

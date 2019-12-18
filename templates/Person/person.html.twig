@@ -11,19 +11,16 @@
                      src="{{ asset("build/uploads/" ~ person.picture) }}"
                      alt="{{ person.lastname }}">
                 <div class="card-body">
-                    <p class="card-text">
+                    <p class="card text-center">
                         {{ person.firstname }}
                         {{ person.lastname }}
-                    <p class="card-text">
-                        <small class="text-muted">Voir ses citations</small>
-                    </p>
                 </div>
             </div>
         </div>
     </div>
 
     {% for moviePersonage in person.moviePersonages %}
-        <h2>{{ moviePersonage.movie.title }} - {{ moviePersonage.personage.name }}</h2>
+        <h4>{{ moviePersonage.movie.title }} - {{ moviePersonage.personage.name }}</h4>
         {% for quote in moviePersonage.quotes %}
             {{ include('default/_quote.html.twig') }}
         {% endfor %}

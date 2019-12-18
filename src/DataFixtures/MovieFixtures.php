@@ -38,6 +38,14 @@ class MovieFixtures extends Fixture implements DependentFixtureInterface
         $manager->persist($movie3);
         $this->setReference("movie-inception", $movie3);
 
+        $movie4 = new Movie();
+        $movie4->setTitle("Django Unchained");
+        $movie4->setPicture("django.jpg");
+        $movie4->setReleaseDate(new \DateTime("2013"));
+        $movie4->setDirector($this->getReference("director-tarantino"));
+        $movie4->addCategory($this->getReference("drame"));
+        $manager->persist($movie4);
+        $this->setReference("movie-django", $movie4);
 
         $manager->flush();
     }
