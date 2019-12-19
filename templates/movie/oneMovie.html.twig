@@ -8,12 +8,13 @@
                 <img src="{{ asset("build/uploads/" ~ movie.picture) }}" alt="{{ movie.title }}" class="
               fit-image movie-card">
             </div>
+
             <div class="col-md-9">
                 <div class="flex-column d-flex align-items-center">
-                <h1>{{ movie.title }}</h1>
-                <div>{{ movie.releaseDate |date ('d-m-Y') }}</div>
-                <div>Réalisateur: {{ movie.director.firstname }} {{ movie.director.lastname }}</div>
-                Catégorie:
+                    <h1>{{ movie.title }}</h1><br>
+                    <h6>{{ movie.releaseDate |date ('Y') }}</h6><br>
+                    <h5>Réalisateur: {{ movie.director.firstname }} {{ movie.director.lastname }}</h5><br>
+                    Catégorie:
                     {% for category in movie.categories %}
                         {{ category.name }}
                     {% endfor %}
@@ -24,7 +25,9 @@
 
 
     <div class="container">
-        <h3> Acteurs : </h3><br/>
+        <h3> Acteurs : </h3>
+        <hr>
+
         <div class="row">
             {% for moviePersonage in movie.moviePersonages %}
                 <div class="col-md-3">
@@ -33,7 +36,7 @@
                              src="{{ asset("build/uploads/" ~ moviePersonage.person.picture) }}"
                              alt="{{ moviePersonage.person.lastname }}">
                         <div class="card-body">
-                            <p class="card text-center">
+                            <p class="text-center">
                                 <a href="{{ path('person', {'id': moviePersonage.person.id}) }}">
                                     {{ moviePersonage.person.firstname }}
                                     {{ moviePersonage.person.lastname }}
@@ -45,6 +48,13 @@
             {% endfor %}
         </div>
     </div>
+
+
+    {% for moviePersonage in movie.moviePersonages %}
+        {% for quote in moviePersonage.quotes %}
+            {{ include('default/_quote.html.twig') }}
+        {% endfor %}
+    {% endfor %}
 
 
 

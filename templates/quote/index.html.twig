@@ -4,7 +4,11 @@
 
 {% block body %}
 
-				<div>
-					{{ render(controller('App\\Controller\\DefaultController::quote')) }}
-				</div>
+
+    <div>
+        {{ include('default/_list.html.twig') }}
+    </div>
+
 {% endblock %}
+
+

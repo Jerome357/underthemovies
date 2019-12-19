@@ -1,5 +1,5 @@
-{% for quotes in quote %}
+{% for quote in quotes %}
     <div>
-        {{ render(controller('App\\Controller\\DefaultController::quote')) }}
+        {{ include('default/_quote.html.twig') }}
     </div>
 {% endfor %}

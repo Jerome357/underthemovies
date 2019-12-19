@@ -1,12 +1,10 @@
 <div class="d-flex justify-content-center">
     <div class="col-9">
-
-        <div class="text-right mt-5">
+        <div class="text-right mt-1">
             {{ quote.user.username }}
             /
             {{ quote.createdAt |date ('d-m-Y') }}
         </div>
-
 
         <div class="card">
             <div class="card-header text-right" style="height: 3em;">
@@ -33,7 +31,7 @@
                             {% endfor %}
 
                             <a href={{ lien }}>
-                                 <strong>{{ title }}</strong></a>
+                                <strong>{{ title }}</strong></a>
 
                         </p>
                     </div>
